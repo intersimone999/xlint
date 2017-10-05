@@ -1,0 +1,2 @@
+XMLChecker:lo_properties.xml
+XMLChecker:text.xml

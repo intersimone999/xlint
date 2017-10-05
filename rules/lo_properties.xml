@@ -1,0 +1,51 @@
+<rule>
+    <title>Properties checker</title>
+    <descr>Checks the title and other basic properties of the learning objects (like theme and so on)</descr>
+    
+    <manifest>
+        <error>
+            <what>manifest//organizations//organization/title</what>
+            <match>^[0-9]+\. .*</match>
+            <message>The title of the LO must start with the number of the module (e.g., "1. Name")</message>
+        </error>
+    </manifest>
+    
+    <template>
+        <error>
+            <what>learningObject/@name</what>
+            <match>^[0-9]+\. .*</match>
+            <message>The title of the LO must start with the number of the module (e.g., "1. Name")</message>
+        </error>
+        
+        <error>
+            <what>learningObject/@textSize</what>
+            <match>^14$</match>
+            <message>The size of the learning object has to be 14</message>
+        </error>
+        
+        <error>
+            <what>learningObject/@navigation</what>
+            <match>^Historic$</match>
+            <message>The navigation type has to be historic</message>
+        </error>
+        
+        <error>
+            <what>learningObject/@theme</what>
+            <match>^flatblue$</match>
+            <message>The theme has to be "flat blue"</message>
+        </error>
+        
+        <error>
+            <what>learningObject/title/@name</what>
+            <match>^Titolo$</match>
+            <message>The title of every title slide has to be "Titolo"</message>
+        </error>
+        
+        <warning>
+            <what>learningObject/title</what>
+            <match>.*[^0-9].*</match>
+            <message>The title should not containt numbers.</message>
+        </warning>
+
+    </template>
+</rule>
