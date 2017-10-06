@@ -135,7 +135,7 @@ module SCORM
             end
             
             def warning!(string)
-                @report.error self, string
+                @report.warning self, string
             end
             
             def check_manifest(manifest)

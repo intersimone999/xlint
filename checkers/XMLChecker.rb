@@ -36,9 +36,9 @@ module SCORM::Checkers
                 
                 content = spotted.content
                 if check.name == "error"
-                    error! message + " IN #{type}." unless content.match(regexp)
+                    error! message + " IN #{type} [#{spotted.path}]." unless content.match(regexp)
                 elsif check.name == "warning"
-                    warning! message + " IN #{type}." unless content.match(regexp)
+                    warning! message + " IN #{type} [#{spotted.path}]." unless content.match(regexp)
                 else
                     raise "Invalid rule: #{check.name}"
                 end

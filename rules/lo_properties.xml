@@ -4,7 +4,7 @@
     
     <manifest>
         <error>
-            <what>manifest//organizations//organization/title</what>
+            <what>manifest/organizations/organization/title</what>
             <match>^[0-9]+\. .*</match>
             <message>The title of the LO must start with the number of the module (e.g., "1. Name")</message>
         </error>
@@ -47,5 +47,34 @@
             <message>The title should not containt numbers.</message>
         </warning>
 
+        <error>
+            <what>learningObject/accNav[@name='Glossario']/@navSetting</what>
+            <match>^backonly$</match>
+            <message>The glossary must be "back only".</message>
+        </error>
+        
+        <error>
+            <what>learningObject/accNav[@name='Glossario']/@panelWidth</what>
+            <match>^Full$</match>
+            <message>The glossary must have panel width "Full".</message>
+        </error>
+        
+        <error>
+            <what>learningObject/accNav[@name='Glossario']/nestedPage/@name</what>
+            <match><![CDATA[^(\<strong\>|\<b\>)]]></match>
+            <message>The title of nested pages in the glossary must be bold</message>
+        </error>
+        
+        <warning>
+            <what>learningObject//text</what>
+            <match>(^$|text\-align\: justify\;)</match>
+            <message>Text not justified.</message>
+        </warning>
+        
+        <warning>
+            <what>learningObject//@text</what>
+            <match>(^$|text\-align\: justify\;)</match>
+            <message>Text not justified.</message>
+        </warning>
     </template>
 </rule>
